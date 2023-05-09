@@ -102,10 +102,12 @@ class HomePage extends StatelessWidget {
                         // ),
                         //SizedBox(width: 20),
                         CustomButtonExpanded(
-                          onPress: () {},
+                          onPress: () {
+                            Get.to(DashboardPage());
+                          },
                           padding: 8,
                           color: Constants.secondaryColor,
-                          textname: '1111',
+                          textname: 'Dashboard',
                         ),
                         CustomButtonExpanded(
                           onPress: () {},
