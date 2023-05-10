@@ -5,25 +5,6 @@ import 'package:myaggr/UI/Widget/custom_button_expanded.dart';
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key? key}) : super(key: key);
 
-  // Widget NavBottom(){
-  //    return showModalBottomSheet(context: context, builder:
-  //    (BuildContext context){
-  //      return SizedBox(
-  //        height: 400,
-  //        child: Center(
-  //          child: ElevatedButton(
-  //            child:  const Text("hello"),
-  //            onPressed: (){
-  //              Navigator.pop(context);
-  //            },
-  //          ),
-  //        ),
-  //      );
-  //    }
-  //
-  //    );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

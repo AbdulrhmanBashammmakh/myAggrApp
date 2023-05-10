@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myaggr/UI/Constant/colors_constant.dart';
 import 'package:myaggr/UI/Screen/dashboard_page.dart';
+import 'package:myaggr/UI/Screen/lists_products_page.dart';
+import 'package:myaggr/UI/Screen/login_page.dart';
+import 'package:myaggr/UI/Screen/my_home_page.dart';
+import 'package:myaggr/UI/Screen/register_page.dart';
 import 'package:myaggr/UI/Widget/custom_button_expanded.dart';
 import 'package:myaggr/UI/Widget/custom_text.dart';
 import 'package:myaggr/UI/Widget/custom_text_field.dart';
@@ -110,22 +114,30 @@ class HomePage extends StatelessWidget {
                           textname: 'Dashboard',
                         ),
                         CustomButtonExpanded(
-                          onPress: () {},
+                          onPress: () {
+                            Get.to(LoginPage());
+                          },
                           padding: 8,
                           color: Constants.secondaryColor,
-                          textname: '2222',
+                          textname: 'login',
                         ),
                         CustomButtonExpanded(
-                          onPress: () {},
+                          onPress: () {
+                            Get.to(SignUpPage());
+                          },
                           padding: 8,
                           color: Constants.secondaryColor,
-                          textname: '3333',
+                          textname: 'register',
                         ),
                         CustomButtonExpanded(
-                          onPress: () {},
+                          onPress: () {
+                            Get.to(MyHomePage(
+                              title: 'Home',
+                            ));
+                          },
                           padding: 8,
                           color: Constants.secondaryColor,
-                          textname: '4444',
+                          textname: 'Home',
                         ),
 
                         // SizedBox(width: 20)
@@ -139,10 +151,12 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomButtonExpanded(
-                      onPress: () {},
+                      onPress: () {
+                        Get.to(ListAddProducts());
+                      },
                       padding: 8,
                       color: Constants.secondaryColor,
-                      textname: '5555',
+                      textname: 'List Add Products',
                     ),
                     CustomButtonExpanded(
                       onPress: () {},
