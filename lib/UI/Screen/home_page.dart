@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myaggr/UI/Constant/colors_constant.dart';
 import 'package:myaggr/UI/Screen/dashboard_page.dart';
+import 'package:myaggr/UI/Screen/list_view_page.dart';
 import 'package:myaggr/UI/Screen/lists_products_page.dart';
 import 'package:myaggr/UI/Screen/login_page.dart';
 import 'package:myaggr/UI/Screen/my_home_page.dart';
@@ -159,10 +160,12 @@ class HomePage extends StatelessWidget {
                       textname: 'List Add Products',
                     ),
                     CustomButtonExpanded(
-                      onPress: () {},
+                      onPress: () {
+                        Get.to(MyApp());
+                      },
                       padding: 8,
                       color: Constants.secondaryColor,
-                      textname: '6666',
+                      textname: 'list view test',
                     ),
                     CustomButtonExpanded(
                       onPress: () {

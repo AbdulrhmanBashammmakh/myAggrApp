@@ -5,8 +5,30 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(
-        title: Text('SignUp Page')),body: Center()
-      ,);
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Register'),
+      ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: ListView.builder(
+              itemCount: 50,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  title: Text('Item $index'),
+                );
+              },
+            ),
+          ),
+          ElevatedButton(
+            child: Text('My Button'),
+            onPressed: () {
+              // Do something when button is pressed
+            },
+          ),
+        ],
+      ),
+    );
   }
 }
