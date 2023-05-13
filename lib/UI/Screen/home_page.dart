@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:myaggr/Controllers/my_controller_check_internet_connection.dart';
 import 'package:myaggr/UI/Constant/colors_constant.dart';
 import 'package:myaggr/UI/Screen/dashboard_page.dart';
 import 'package:myaggr/UI/Screen/list_view_page.dart';
@@ -12,7 +13,9 @@ import 'package:myaggr/UI/Widget/custom_text.dart';
 import 'package:myaggr/UI/Widget/custom_text_field.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
+  final MyController myController = Get.put(MyController());
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +45,9 @@ class HomePage extends StatelessWidget {
                   color: Constants.primaryColor2,
                   fontSize: 30,
                 ),
+              ),
+              Center(
+                child: Obx(() => Text(myController.internetStatus.value)),
               ),
               SizedBox(
                 height: 20,

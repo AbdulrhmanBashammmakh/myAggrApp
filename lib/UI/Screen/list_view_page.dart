@@ -22,8 +22,28 @@ class _MyAppState extends State<MyApp> {
               child: ListView.builder(
                 itemCount: items.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    title: Text(items[index]),
+                  final item = items[index];
+                  return Dismissible(
+                    key: Key(item),
+                    onDismissed: (direction) {
+                      setState(() {
+                        items.removeAt(index);
+                      });
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('$item dismissed')),
+                      );
+                    },
+                    child: ListTile(
+                      title: Text(item),
+                      trailing: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            items.removeAt(index);
+                          });
+                        },
+                        child: Icon(Icons.delete),
+                      ),
+                    ),
                   );
                 },
               ),
