@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:myaggr/UI/Screen/home_page.dart';
+
+import 'UI/Screen/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +20,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+        //   title: 'GetX Example',
+        //   initialRoute: '/second',
+        //   getPages: [
+        //     GetPage(
+        //         name: '/first',
+        //         page: () => FirstPage(),
+        //         binding: BindingsBuilder(() => Get.put(FirstPageController()))),
+        //     GetPage(
+        //         name: '/second',
+        //         page: () => SecondPage(),
+        //         binding: BindingsBuilder(() => Get.put(SecondPageController()))),
+        //   ],
+        // );
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,

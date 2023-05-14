@@ -32,8 +32,10 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
+
     compileSdkVersion 32
     ndkVersion flutter.ndkVersion
+//    namespace 'com.shammakh.myaggr'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

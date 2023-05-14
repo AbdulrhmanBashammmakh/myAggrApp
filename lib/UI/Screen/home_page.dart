@@ -7,6 +7,8 @@ import 'package:myaggr/UI/Screen/list_view_page.dart';
 import 'package:myaggr/UI/Screen/lists_products_page.dart';
 import 'package:myaggr/UI/Screen/login_page.dart';
 import 'package:myaggr/UI/Screen/my_home_page.dart';
+import 'package:myaggr/UI/Screen/pass_data_example/First_Page.dart';
+import 'package:myaggr/UI/Screen/pass_data_example/Second_Page.dart';
 import 'package:myaggr/UI/Screen/register_page.dart';
 import 'package:myaggr/UI/Widget/custom_button_expanded.dart';
 import 'package:myaggr/UI/Widget/custom_text.dart';
@@ -194,10 +196,12 @@ class HomePage extends StatelessWidget {
                     child: Container(
                       //  width: 200,
                       child: CustomButtonExpanded(
-                        onPress: () {},
+                        onPress: () {
+                          Get.to(FirstPage());
+                        },
                         padding: 8,
                         color: Constants.secondaryColor,
-                        textname: '8888',
+                        textname: 'FirstPage',
                       ),
                     ),
                   ),
@@ -206,10 +210,12 @@ class HomePage extends StatelessWidget {
                     child: Container(
                       // width: 200,
                       child: CustomButtonExpanded(
-                        onPress: () {},
+                        onPress: () {
+                          Get.to(SecondPage());
+                        },
                         padding: 8,
                         color: Constants.secondaryColor,
-                        textname: '9999',
+                        textname: 'SecondPage',
                       ),
                     ),
                   ),
