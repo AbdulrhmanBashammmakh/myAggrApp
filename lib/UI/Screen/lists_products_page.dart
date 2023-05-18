@@ -79,7 +79,7 @@ class _ListAddProductsState extends State<ListAddProducts> {
         isScrollControlled: true,
         builder: (BuildContext context) {
           return SizedBox(
-              height: MediaQuery.of(context).size.height / 2,
+              height:  400, //MediaQuery.of(context).size.height / 2,
               child: Container(
                 padding: const EdgeInsets.all(15),
                 child: Column(
@@ -88,7 +88,7 @@ class _ListAddProductsState extends State<ListAddProducts> {
                   children: [
                     const CustomText(text: 'Product Name'),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: TextField(
                         controller: _nameController,
                         decoration:
