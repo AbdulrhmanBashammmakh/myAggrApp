@@ -1,12 +1,17 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 import 'package:myaggr/Controllers/login_controller.dart';
+
+import '../../Controllers/auth_controller.dart';
 
 class LoginPage extends GetView<SignupController> {
   LoginPage({Key? key}) : super(key: key);
 
   final SignupController signupController = Get.put(SignupController());
-
+  final AuthController _authController = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,16 +26,16 @@ class LoginPage extends GetView<SignupController> {
           children: [
             TextField(
               decoration: InputDecoration(labelText: 'Email'),
-              onChanged: (value) => controller.email = value,
+              onChanged: (value) => _authController.email = value,
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Password'),
               obscureText: true,
-              onChanged: (value) => controller.password = value,
+              onChanged: (value) => _authController.password = value,
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () => controller.signup(),
+              onPressed: () => _authController.login(),
               child: Text('Signup'),
             ),
             Obx(() {
@@ -44,5 +49,23 @@ class LoginPage extends GetView<SignupController> {
         ),
       ),
     );
+  }
+
+  void CheckLogin() async {
+    final String _baseUrl =
+        'http://localhost:9098/myapp238/api/v1/auth/authenticate';
+    final Map<String, dynamic> authData = {
+      'email': 'a@asdf.com',
+      'password': '123456',
+    };
+
+    final url = Uri.parse(_baseUrl); //  ,
+    final resp = await http.post(url, body: json.encode(authData), headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE, HEAD'
+    });
+    print(resp.body);
+    // GotoHome();
   }
 }
