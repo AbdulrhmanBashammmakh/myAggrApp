@@ -14,6 +14,8 @@ import 'package:myaggr/UI/Widget/custom_button_expanded.dart';
 import 'package:myaggr/UI/Widget/custom_text.dart';
 import 'package:myaggr/UI/Widget/custom_text_field.dart';
 
+import 'fetch_page_api.dart';
+
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -177,11 +179,11 @@ class HomePage extends StatelessWidget {
                     ),
                     CustomButtonExpanded(
                       onPress: () {
-                        Get.to(DashboardPage());
+                        Get.to(FetchPage());
                       },
                       padding: 8,
                       color: Constants.secondaryColor,
-                      textname: "7777",
+                      textname: "fetch",
                     )
                   ],
                 ),
