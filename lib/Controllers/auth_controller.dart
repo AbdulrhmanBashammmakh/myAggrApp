@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
+import '../Data/jwt_data_from_service.dart';
 import '../UI/Screen/after_login_page_go.dart';
 
 class AuthController extends GetxController {
@@ -34,8 +35,15 @@ class AuthController extends GetxController {
       'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE, HEAD'
     });
     print(resp.body);
+    print(resp.body);
+    Token.fromJson(resp.body as Map<String, dynamic>);
+    //  tokenToJson(resp.body as Token);
+    //Token
     if (resp.statusCode == 200) {
       Get.to(AfterPage());
+      /*
+
+       */
     } else {
 /*
       ScaffoldMessenger.of(context).showSnackBar(
