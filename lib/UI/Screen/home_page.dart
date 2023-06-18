@@ -14,6 +14,7 @@ import 'package:myaggr/UI/Widget/custom_button_expanded.dart';
 import 'package:myaggr/UI/Widget/custom_text.dart';
 import 'package:myaggr/UI/Widget/custom_text_field.dart';
 
+import 'Radio_Buttons.dart';
 import 'fetch_page_api.dart';
 
 class HomePage extends StatelessWidget {
@@ -240,10 +241,12 @@ class HomePage extends StatelessWidget {
                   Container(
                     width: 200,
                     child: CustomButtonExpanded(
-                      onPress: () {},
+                      onPress: () {
+                        Get.to(MyRadioButtons());
+                      },
                       padding: 8,
                       color: Constants.secondaryColor,
-                      textname: '1111',
+                      textname: 'radio button',
                     ),
                   ),
                 ],
